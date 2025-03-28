@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+@import "tailwindcss/utilities";
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Raleway', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-zinc-50: #fafafa;
+    --color-zinc-100: #f5f5f5;
+    --color-zinc-200: #e5e5e5;
+    --color-zinc-300: #d4d4d4;
+    --color-zinc-400: #a3a3a3;
+    --color-zinc-500: #737373;
+    --color-zinc-600: #525252;
+    --color-zinc-700: #404040;
+    --color-zinc-800: #262626;
+    --color-zinc-900: #171717;
+    --color-zinc-950: #0a0a0a;
+    /* CUSTOM COLORS */
+    --color-one: #0F1B2B;
+    --color-two:#1B2638;
+    --color-three:#425B79;
+    --color-four: #7A8EA9;
+    --color-five: #E0E1DC;
+    --color-six:#EFEFF7;
+    --color-seven:#FDFDFD;
+    --color-warning: #ffeb87;
+    --color-on-warning: #e9680e;
+
+
+    --color-accent: var(--color-neutral-800);
+    --color-accent-content: var(--color-neutral-800);
+    --color-accent-foreground: var(--color-white);
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-white);
+        --color-accent-content: var(--color-white);
+        --color-accent-foreground: var(--color-neutral-800);
+    }
+
+}
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+[data-flux-field] {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply  !mb-0 !leading-tight;
+}
+
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+/*
+    CUSTOM STYLES
+    --color-one: #0F1B2B;
+    --color-two:#1B2638;
+    --color-three:#425B79;
+    --color-four: #7A8EA9;
+    --color-five: #E0E1DC;
+    --color-six:#EFEFF7;
+    --color-seven:#FDFDFD;
+*/
+[data-flux-icon]{
+    @apply text-two dark:text-four
+}
+[data-flux-input]{
+    div{
+        @apply text-two dark:text-five
+    }
+    input{
+        @apply text-[13px]
+        text-one dark:text-four
+          tracking-wide
+        placeholder:text-one dark:placeholder:text-four
+    }
+}
+[data-flux-error]{
+    svg{
+        @apply text-red-600
+    }
+    @apply -mt-3
+        p-1
+        rounded-md
+      text-red-600
+        tracking-wider
+        text-[11px]
+        font-semibold
+}
+[data-flux-button]{
+    svg{
+        @apply text-four dark:text-one
+    }
+    @apply border border-six
+        bg-two dark:bg-five
+        rounded-md
+        font-extrabold
+        uppercase
+        text-[12px]
+        text-four dark:text-two
+
+}
