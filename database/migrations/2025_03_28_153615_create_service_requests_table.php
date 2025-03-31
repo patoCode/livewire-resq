@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('description')->nullable(false);
             $table->integer('priority')->default(1000);
+            $table->string('code')->nullable(false);
             $table->enum('stage',['pending', 'on_progress','pause','waiting_for_client','waiting_for_parts','scheduled','escalated','done','closed','cancelled','rejected'])->default('pending');
             $table->enum('type',['user','tech','system'])->default('user');
             $table->enum('status',['active', 'inactive'])->default('active');

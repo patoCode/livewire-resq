@@ -17,5 +17,11 @@ Route::get('/', function () {
         return view('modules.forms.help');
     })->name('help');
 
+Route::get('/board', function(){
+    return view('modules.technician.index');
+})->name('board');
+
+
+
 
 //});

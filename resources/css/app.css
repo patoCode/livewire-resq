@@ -121,5 +121,18 @@ select:focus[data-flux-control] {
         uppercase
         text-[12px]
         text-four dark:text-two
+}
+/* DATATABLES */
 
+table.datatable{
+    @apply mb-4
+}
+table.datatable thead{
+    @apply text-[10px] uppercase bg-one dark:bg-four text-five dark:text-five
+}
+table.datatable thead tr th {
+ @apply p-2 tracking-[.7px] text-start font-extrabold
+}
+table.datatable tbody tr td{
+    @apply p-2 border-b border-b-three text-[11px]
 }

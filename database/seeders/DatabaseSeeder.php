@@ -62,6 +62,7 @@ class DatabaseSeeder extends Seeder
         Category::factory()->create([
             'name' => 'Soporte IT',
             'code' => 'SIT',
+
         ]);
         Category::factory()->create([
             'name' => 'ICONO',
@@ -71,6 +72,5 @@ class DatabaseSeeder extends Seeder
             'name' => 'Reclamos',
             'code' => 'REC',
         ]);
-
     }
 }
